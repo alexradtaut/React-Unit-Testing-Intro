@@ -10,6 +10,9 @@ function Input({ secretWord }) {
   const [currentGuess, setCurrentGuess] = React.useState('');
   const onSubmit = (e) => {
     e.preventDefault();
+    if (currentGuess === secretWord) {
+      setSuccess(true);
+    }
     setCurrentGuess('');
   };
   if (success) {
